@@ -17,8 +17,6 @@ public class SearchInsertPosition {
 	 * @return
 	 */
 	public static int searchInsert(int[] nums, int target) {
-		int half = nums.length / 2;
-		int middle = nums[half];
 		return 0;
 	}
 
@@ -28,16 +26,15 @@ public class SearchInsertPosition {
 		} else {
 			int middle = (low + high) / 2;
 			if (nums[middle] > target) {
-				return find(nums, target, middle + 1, high);
+				return find(nums, target, low, middle - 1);
 			} else {
 				if (nums[middle] < target) {
-					return find(nums, target, low, middle - 1);
+					return find(nums, target, middle + 1, high);
 				} else {
 					return middle;
 				}
 			}
 		}
 	}
-
 
 }

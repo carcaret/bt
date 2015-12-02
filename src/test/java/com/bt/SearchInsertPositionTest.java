@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class SearchInsertPositionTest {
 
-	private int[] nums = { 5, 8, 1, 3, 2, 9, 7 };
+	private int[] nums = { 1, 3, 4, 6, 8, 9 };
 
 	@Test
 	public void foundUpperHalf() {
@@ -15,14 +15,14 @@ public class SearchInsertPositionTest {
 
 	@Test
 	public void foundLowerHalf() {
-		int number = SearchInsertPosition.find(nums, 8, 0, nums.length - 1);
+		int number = SearchInsertPosition.find(nums, 3, 0, nums.length - 1);
 		Assert.assertEquals(1, number);
 	}
-	
+
 	@Test
 	public void notFound() {
-		int number = SearchInsertPosition.find(nums, 6, 0, nums.length - 1);
+		int number = SearchInsertPosition.find(nums, 5, 0, nums.length - 1);
 		Assert.assertEquals(-1, number);
 	}
-	
+
 }
